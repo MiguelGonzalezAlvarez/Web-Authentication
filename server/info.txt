@@ -1,0 +1,2 @@
+Para hacer funcionar el servidor es necesario tener node_modules instalado lo cual se puede hacer haciendo
+npm install en la carpeta server 
