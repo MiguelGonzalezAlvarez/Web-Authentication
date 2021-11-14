@@ -13,10 +13,9 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent {
 
-
   miFormulario: FormGroup = this.fb.group({
     email: ['test1@test.com', [Validators.required, Validators.email]],
-    password: ['123456', [Validators.required, Validators.minLength(6)]],
+    password: ['conT_raseNya_Ultra_Segura_Real_NO_TesT', [Validators.required, Validators.minLength(6)]],
   });
 
   constructor(
@@ -24,7 +23,6 @@ export class LoginComponent {
     private router: Router,
     private authService: AuthService
   ) { }
-
 
   login() {
     const { email, password } = this.miFormulario.value;
@@ -38,6 +36,5 @@ export class LoginComponent {
         }
       });
   }
-
 
 }

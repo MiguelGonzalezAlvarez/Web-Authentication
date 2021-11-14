@@ -66,12 +66,10 @@ export class AuthService {
             uid: resp.uid!,
             email: resp.email!
           }
-
           return resp.ok;
         }),
         catchError(err => of(false))
       );
-
   }
 
   logout() {

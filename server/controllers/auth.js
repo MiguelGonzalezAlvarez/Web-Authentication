@@ -101,14 +101,19 @@ const revalidarToken = async (req, res = response) => {
     const dbUser = await Usuario.findById(uid);
 
     // Generar el JWT
-    const token = await generarJWT(uid, dbUser.name);
-
-    return res.json({
-        ok: true,
-        uid,
-        name: dbUser.name,
-        email: dbUser.email,
-        token
+    if (dbUser) {
+        const token = await generarJWT(uid, dbUser.name);
+        return res.json({
+            ok: true,
+            uid,
+            name: dbUser.name,
+            email: dbUser.email,
+            token
+        });
+    }
+    return res.status(500).json({
+        ok: false,
+        msg: 'No existe usuario para ese uid'
     });
 
 }
