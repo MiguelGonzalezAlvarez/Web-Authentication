@@ -12,7 +12,7 @@ import { Usuario, AuthResponse } from '../interfaces/interfaces';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl: string = '';
+  private baseUrl: string = environment.baseUrl;
   private _usuario!: Usuario;
 
   get usuario() {
