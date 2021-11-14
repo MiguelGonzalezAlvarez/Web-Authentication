@@ -4,3 +4,6 @@ npm install en la carpeta server
 Para lanzar el servidor usamos los comandos:
     - npm run dev
     - npm start
+
+Si queremos usar el despliegue de heroku tenemos que sacar a parte la carpeta server y teniendo en public lo que
+nos haya generado el ng build en la carpeta dist
